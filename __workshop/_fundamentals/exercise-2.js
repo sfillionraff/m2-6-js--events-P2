@@ -10,6 +10,12 @@ const people = [
   { name: { first: "Shahan", middle: "Haig", last: "Krakirian" }, age: 21 },
 ];
 
+const archieComicArray = [
+  {name: "Betty", age: 17},
+  {name: "Jughead", age: 17},
+  {name: "Archie", age: 18},
+  {name: "Veronica", age: 16}
+];
 //-------------------------------------------------
 
 // Exercise 2
@@ -19,9 +25,18 @@ const people = [
 // the average age of the `people` in that array (rounded to the nearest unit.)
 // Use Math.round()
 
-function avgAge(peopleArr) {
-  // return something
+function avgAge(arr) {
+  for (var key in arr) {
+    let total = 0;
+    if (arr[key].hasOwnProperty('age')) {
+      total += arr[key].age;
+      return total;
+    }
+  }
+  // let ageAverage = Math.round(total/arr.length);
+  // return ageAverage;
 }
+console.log(avgAge(people));
 
 // 2. Do a console.log to verify your function.
 
