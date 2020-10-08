@@ -9,37 +9,30 @@ const people = [
   { name: { first: "Louis", last: "Reasoner" }, age: 21 },
   { name: { first: "Shahan", middle: "Haig", last: "Krakirian" }, age: 21 },
 ];
-
-const archieComicArray = [
-  {name: "Betty", age: 17},
-  {name: "Jughead", age: 17},
-  {name: "Archie", age: 18},
-  {name: "Veronica", age: 16}
-];
-//-------------------------------------------------
-
-// Exercise 2
-// ------------
-//
-// 1. Write a function accepts an array and returns
-// the average age of the `people` in that array (rounded to the nearest unit.)
-// Use Math.round()
+  //-------------------------------------------------
+  
+  // Exercise 2
+  // ------------
+  //
+  // 1. Write a function accepts an array and returns
+  // the average age of the `people` in that array (rounded to the nearest unit.)
+  // Use Math.round()
 
 function avgAge(arr) {
-  for (var key in arr) {
-    let total = 0;
-    if (arr[key].hasOwnProperty('age')) {
-      total += arr[key].age;
+  let total = 0;
+  let agesOnly = arr.forEach((element, key) => {
+      total += element.age;
       return total;
-    }
+    })
+  let ageAverage = Math.round(total/arr.length);
+  return ageAverage;
   }
-  // let ageAverage = Math.round(total/arr.length);
-  // return ageAverage;
-}
-console.log(avgAge(people));
+  console.log(avgAge(people));
 
 // 2. Do a console.log to verify your function.
 
 // 3. Run the test to validate: yarn test exercise-2
 
 module.exports = { avgAge, people };
+
+  
