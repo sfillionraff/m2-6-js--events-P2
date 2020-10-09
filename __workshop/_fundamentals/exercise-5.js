@@ -86,9 +86,17 @@ const staffMembers = [
 ];
 
 const getData = (arr, key, val) => {
-  // return something
-};
-
+  let qualifiedPerson = arr.filter((element, key) => {
+    if(element.title === val) {
+      return true;
+    }
+    if(element.skillLevels.sql >= val) {
+      return true;
+    }
+  })
+  return qualifiedPerson;
+}
+console.log(getData(staffMembers, "sql", 7));
 // 2. Do a console.log to verify your function.
 
 // 3. Run the test to validate: yarn test exercise-5
