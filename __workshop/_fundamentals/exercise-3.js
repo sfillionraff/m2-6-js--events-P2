@@ -17,12 +17,41 @@ const people = [
 // 1. Write a function that, when passed an array of *people* (person objects) as
 // an argument and returns an array of their full names (each full name is a string).
 
-function fullName(peopleArr) {
-  // return something
+
+function fullName(arr) {
+  let emptyArray = [];
+  let space = ' ';
+  arr.forEach((element, index, key) => {
+    if (!element.name.middle) {
+      let fullName = element.name.first += space += element.name.last;
+      emptyArray.push(fullName);
+    } else if (element.name.middle) {
+    let fullName = element.name.first += space += element.name.middle += space += element.name.last;
+    emptyArray.push(fullName);
+  }
+  });
+  return emptyArray;
 }
+console.log(fullName(people));
+
 
 // 2. Do a console.log to verify your function.
 
 // 3. Run the test to validate: yarn test exercise-3
 
 module.exports = { fullName, people };
+
+// try one
+  // let random = '';
+  // let space = " ";
+  // arr.map((element, key) => {
+  //   random += element.name.first += space += element.name.middle += space += element.name.last;
+  // });
+  // return random;
+
+  // try two
+  // arr.forEach((element, key) => {
+  //   let personFullName = element.name.join(",");
+  //   return personFullName;
+//   })
+// }
