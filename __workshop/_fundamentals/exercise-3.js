@@ -23,10 +23,10 @@ function fullName(arr) {
   let space = ' ';
   arr.forEach((element, index, key) => {
     if (!element.name.middle) {
-      let fullName = element.name.first += space += element.name.last;
+      let fullName = element.name.first + space + element.name.last;
       emptyArray.push(fullName);
     } else if (element.name.middle) {
-    let fullName = element.name.first += space += element.name.middle += space += element.name.last;
+    let fullName = element.name.first + space + element.name.middle + space + element.name.last;
     emptyArray.push(fullName);
   }
   });
